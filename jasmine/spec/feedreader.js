@@ -58,7 +58,7 @@ $(function() {
         });
 
         it("should contain at least a single entry", function() {
-            expect($(".entry .feed").length).not.toBeLessThan(0);
+            expect($(".feed .entry").length).toBeGreaterThan(0);
         });
     });
 
@@ -78,7 +78,7 @@ $(function() {
 
             loadFeed(1, function() {
                 var newContent = $(".feed .entry").text();
-                expect(newContent).not.toMatch(initialContent);
+                expect(newContent).not.toBe(initialContent);
                 done();
             });
         });
